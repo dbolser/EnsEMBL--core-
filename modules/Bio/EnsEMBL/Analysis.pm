@@ -170,7 +170,7 @@ sub new_fast {
 
   Arg [1]    : string $db
   Example    : none
-  Description: get/set for the attribute db
+  Description: get/set for the db attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -193,7 +193,7 @@ sub db {
 
   Arg [1]    : string $db_version
   Example    : none
-  Description: get/set for attribute db_version
+  Description: get/set for the db_version attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -216,7 +216,7 @@ sub db_version {
 
   Arg [1]    : string $db_file
   Example    : none
-  Description: get/set for attribute db_file
+  Description: get/set for the db_file attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -240,7 +240,7 @@ sub db_file {
 
   Arg [1]    : string $program
   Example    : none
-  Description: get/set for attribute program
+  Description: get/set for the program attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -263,7 +263,7 @@ sub program {
 
   Arg [1]    : string $program_version
   Example    : none
-  Description: get/set for attribute program_version
+  Description: get/set for the program_version attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -286,7 +286,7 @@ sub program_version {
 
   Arg [1]    : string $program_file
   Example    : none
-  Description: get/set for attribute program_file
+  Description: get/set for the program_file attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -309,8 +309,8 @@ sub program_file {
 
   Arg [1]    : string $module
   Example    : none
-  Description: get/set for attribute module. Usually a RunnableDB perl 
-               module that executes this analysis job. 
+  Description: get/set for the module attribute. Usually a RunnableDB
+               perl module that executes this analysis job.
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -333,7 +333,7 @@ sub module {
 
   Arg [1]    : string $module_version
   Example    : none
-  Description: get/set for attribute module_version
+  Description: get/set for the module_version attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -356,7 +356,7 @@ sub module_version {
 
   Arg [1]    : string $gff_source
   Example    : none
-  Description: get/set for attribute gff_source
+  Description: get/set for the gff_source attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -379,7 +379,7 @@ sub gff_source {
 
   Arg [1]    : string $gff_feature
   Example    : none
-  Description: get/set for attribute gff_feature
+  Description: get/set for the gff_feature attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -402,8 +402,9 @@ sub gff_feature {
 
   Arg [1]    : string $parameters
   Example    : none
-  Description: get/set for attribute parameters. This should be evaluated
-               by the module if given or the program that is specified.
+  Description: get/set for parameters attribute. This should be
+               evaluated by the module, if given, or the program that
+               is specified.
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -426,7 +427,8 @@ sub parameters {
 
   Arg [1]    : string $created
   Example    : none
-  Description: get/set for attribute created time.
+  Description: get/set for the created attribute, the time the
+               analysis was created.
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -449,8 +451,8 @@ sub created {
 
   Arg [1]    : string $logic_name
   Example    : none
-  Description: Get/set method for the logic_name, the name under 
-               which this typical analysis is known.
+  Description: get/set for the logic_name attribute, the name by which
+               this analysis is typically known.
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -491,7 +493,7 @@ sub has_database{
 
   Arg [1]    : string $description
   Example    : none
-  Description: get/set for attribute description
+  Description: get/set for the description attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -514,7 +516,7 @@ sub description {
 
   Arg [1]    : string $display_label
   Example    : none
-  Description: get/set for attribute display_label
+  Description: get/set for the display_label attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -536,7 +538,7 @@ sub display_label {
 
   Arg [1]    : string $displayable
   Example    : none
-  Description: get/set for attribute displayable
+  Description: get/set for the displayable attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -559,7 +561,7 @@ sub displayable {
 
   Arg [1]    : string $web_data
   Example    : none
-  Description: get/set for attribute web_data
+  Description: get/set for the web_data attribute
   Returntype : string
   Exceptions : none
   Caller     : general
