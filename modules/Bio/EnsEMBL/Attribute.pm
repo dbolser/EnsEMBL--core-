@@ -59,16 +59,16 @@ use Scalar::Util qw(weaken isweak);
 
 =head2 new
 
-  Arg [-CODE]   : string - the code for this attribute
-  Arg [-NAME]   : string - a human readable name for this attribute
-  Arg [-DESCRIPTION]   : string - a description for this attribute
-  Arg [-VALUE]  : value  - the value of this attribute
-  Example    :   my $attribute = Bio::EnsEMBL::Attribute->new
+  Arg [-CODE]   : string - the code for this Attribute
+  Arg [-NAME]   : string - a human readable name for this Attribute
+  Arg [-DESCRIPTION]   : string - a description for this Attribute
+  Arg [-VALUE]  : value  - the value of this Attribute
+  Example    : my $attribute = Bio::EnsEMBL::Attribute->new
                       (-CODE => 'myCode',
                        -NAME => 'My Attribute',
                        -DESCRIPTION => 'This is my attribute description.',
                        -VALUE => '10023');
-  Description: Constructor.  Instantiates a Bio::EnsEMBL::Attribute object.
+  Description: Constructor. Instantiates a Bio::EnsEMBL::Attribute object.
   Returntype : Bio::EnsEMBL::Attribute
   Exceptions : none
   Caller     : general
@@ -117,7 +117,8 @@ sub new_fast {
 
   Arg [1]    : string $code (optional)x
   Example    : $code = $attribute->code();
-  Description: Getter/Setter for code attribute
+  Description: Getter/Setter for the code attribute,
+               the code for this Attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -136,7 +137,8 @@ sub code {
 
   Arg [1]    : string $name (optional)
   Example    : $name = $attribute->name();
-  Description: Getter/Setter for name attribute
+  Description: Getter/Setter for the name attribute,
+               a human readable name for this Attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -154,7 +156,8 @@ sub name {
 
   Arg [1]    : string $description (optional)
   Example    : $description = $attribute->description();
-  Description: Getter/Setter for description attribute
+  Description: Getter/Setter for the description attribute,
+               a description for this Attribute
   Returntype : string
   Exceptions : none
   Caller     : general
@@ -173,7 +176,8 @@ sub description {
 
   Arg [1]    : string $value (optional)
   Example    : $value = $attribute->value();
-  Description: Getter/Setter for value attribute
+  Description: Getter/Setter for the value attribute,
+               the value of this Attribute
   Returntype : string
   Exceptions : none
   Caller     : general
