@@ -58,6 +58,19 @@ slice.
 
 =head1 METHODS
 
+    new
+    alignFeature
+    mapper
+    length
+    strains
+    Slice
+    _get_indels
+    get_all_Slices
+
+=head1 RELATED MODULES
+
+Bio::EnsEMBL::StrainSlice
+
 =cut
 
 package Bio::EnsEMBL::AlignStrainSlice;
