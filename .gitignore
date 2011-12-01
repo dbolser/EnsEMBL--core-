@@ -1,1 +1,5 @@
+# Don't want to conflict with CVS
 CVS
+
+# Ignore (emacs) temporary files
+*~
