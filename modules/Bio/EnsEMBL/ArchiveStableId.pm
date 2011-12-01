@@ -205,8 +205,8 @@ sub get_history_tree {
 
   Args        : none
   Example     : none
-  Description : Retrieve a list of ArchiveStableIds that were mapped to this
-                one.
+  Description : Retrieve a list of ArchiveStableIds that were mapped
+                to this one.
   Returntype  : listref of Bio::EnsEMBL::ArchiveStableId
   Exceptions  : none
   Caller      : general
@@ -232,7 +232,8 @@ sub get_all_predecessors {
 
   Args        : none
   Example     : none
-  Description : Retrieve a list of ArchiveStableIds that this one was mapped to.
+  Description : Retrieve a list of ArchiveStableIds that this one was
+                mapped to.
   Returntype  : listref Bio::EnsEMBL::ArchiveStableId
   Exceptions  : none
   Caller      : general
@@ -257,8 +258,8 @@ sub get_all_successors {
 
   Example     : none
   Description : Retrieves the peptide string for this ArchiveStableId.
-  Returntype  : String, or undef if this is not a Translation or cant be found
-                in the database.
+  Returntype  : String, or undef if this is not a Translation or cant
+                be found in the database.
   Exceptions  : none
   Caller      : general
   Status      : At Risk
@@ -281,8 +282,8 @@ sub get_peptide {
 
   Example     : my ($arch_gene, $arch_tr, $arch_tl, $pep_seq) =
                   @{ $arch_id->get_all_associated_archived };
-  Description : Fetches associated archived stable IDs from the db for this
-                ArchiveStableId (version is taken into account).
+  Description : Fetches associated archived stable IDs from the db for
+                this ArchiveStableId (version is taken into account).
   Return type : Listref of
                   ArchiveStableId archived gene
                   ArchiveStableId archived transcript
@@ -329,8 +330,9 @@ sub get_all_gene_archive_ids {
   Example     : none
   Example     : my @archived_transcripts =
                   @{ $arch_id->get_all_transcript_archive_ids };
-  Description : Returns transcript ArchiveStableIds associated with this
-                ArchiveStableId. If this is a transcript, it returns itself.
+  Description : Returns transcript ArchiveStableIds associated with
+                this ArchiveStableId. If this is a transcript, it
+                returns itself.
   Returntype  : listref of Bio::EnsEMBL::ArchiveStableId
   Exceptions  : none
   Caller      : general
@@ -354,8 +356,9 @@ sub get_all_transcript_archive_ids {
 
   Example     : my @archived_peptides =
                   @{ $arch_id->get_all_translation_archive_ids };
-  Description : Returns translation ArchiveStableIds associated with this
-                ArchiveStableId. If this is a translation, it returns itself.
+  Description : Returns translation ArchiveStableIds associated with
+                this ArchiveStableId. If this is a translation, it
+                returns itself.
   Returntype  : listref of Bio::EnsEMBL::ArchiveStableId
   Exceptions  : none
   Caller      : general
@@ -413,10 +416,11 @@ sub current_version {
                   print $arch_id->version, " is the current version of this
                     stable ID.\n";
                 }
-  Description : Determines if the version of this object is the current version
-                of this stable ID. Note that this method doesn't lazy-load the
-                current version of an ArchiveStableId; if you want to be sure,
-                use current_version() instead.
+  Description : Determines if the version of this object is the
+                current version of this stable ID. Note that this
+                method doesn't lazy-load the current version of an
+                ArchiveStableId; if you want to be sure, use
+                current_version() instead.
   Return type : Boolean (TRUE if it is current, else FALSE)
   Exceptions  : none
   Caller      : general
@@ -436,9 +440,10 @@ sub is_current {
   Example     : my $latest = $arch_id->get_latest_incarnation;
                 print "Latest version of ".$arch_id->stable_id." is ".
                   $latest->version."\n";
-  Description : Returns the ArchiveStableId representing the latest version
-                of this stable ID. Returns itself if this already is the latest
-                version, otherwise fetches it from the db.
+  Description : Returns the ArchiveStableId representing the latest
+                version of this stable ID. Returns itself if this
+                already is the latest version, otherwise fetches it
+                from the db.
   Return type : Bio::EnsEMBL::ArchiveStableId
   Exceptions  : none
   Caller      : general
@@ -464,9 +469,9 @@ sub get_latest_incarnation {
                   print "Version ".$arch_id->version." is the latest version 
                     of ".$arch_id->stable_id."\n";
                 }
-  Description : Indicates whether this is the latest version of this stable ID.
-                Can also be used as a setter if we know this is the latest
-                version.
+  Description : Indicates whether this is the latest version of this
+                stable ID.  Can also be used as a setter if we know
+                this is the latest version.
   Return type : Boolean (TRUE if yes, FALSE if no)
   Exceptions  : none
   Caller      : Bio::EnsEMBL::DBSQL::ArchiveStableIdAdaptor->fetch_by_stable_id, general
@@ -533,7 +538,6 @@ sub successors {
   $self->{'successors'} = \@_;
   return $self->{'successors'};
 }
-
 
 1;
 
