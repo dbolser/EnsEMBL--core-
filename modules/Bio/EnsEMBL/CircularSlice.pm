@@ -53,6 +53,11 @@ retrieve sequence or features from an area of interest.
 
 =head1 METHODS
 
+=head1 RELATED MODULES
+
+Bio::PrimarySeqI
+Bio::EnsEMBL::Slice;
+
 =cut
 
 package Bio::EnsEMBL::CircularSlice;
@@ -378,8 +383,8 @@ sub seq {
   Arg  [3]   : (optional) int $strand
                The strand of the slice to obtain sequence from. Default
                value is 1.
-  Description: returns string of dna sequence
-  Returntype : txt
+  Description: Returns string of DNA sequence
+  Returntype : string
   Exceptions : end should be at least as big as start
                strand must be set
   Caller     : general
@@ -3517,8 +3522,9 @@ sub get_generic_features {
 	                '-'.$chr_slice->end().
                          $chr_slice->strand(). " length: ".($chr_slice->end()-$chr_slice->start()+1). "\n";
                 }
-  Description: Projection of slice to another specific slice. Needed for where we have multiple mappings
-               and we want to state which one to project to.
+  Description: Projection of slice to another specific slice. Needed
+               for where we have multiple mappings and we want to
+               state which one to project to.
   Returntype : list reference of Bio::EnsEMBL::ProjectionSegment objects which
                can also be used as [$start,$end,$slice] triplets.
   Exceptions : none
