@@ -93,11 +93,11 @@ use vars qw(@ISA);
   Arg [-MODIFIED_DATE]:
         string - the date the gene was last modified
   Arg [-DESCRIPTION]:
-        string - the genes description
+        string - the description of the gene
   Arg [-BIOTYPE]:
         string - the biotype e.g. "protein_coding"
   Arg [-STATUS]:
-        string - the gene status i.e. "KNOWN","NOVEL"
+        string - the gene status i.e. "KNOWN", "NOVEL", etc.
   Arg [-SOURCE]:
         string - the genes source, e.g. "ensembl"
   Arg [-IS_CURRENT]:
@@ -108,7 +108,7 @@ use vars qw(@ISA);
         integer - the canonical transcript dbID of this gene, if the
         transcript object itself is not available.
   Arg [-CANONICAL_ANNOTATION]:
-        string - canonical annotation
+        string - canonical annotation text
 
   Example    : $gene = Bio::EnsEMBL::Gene->new(...);
   Description: Creates a new gene object
@@ -216,7 +216,8 @@ sub is_known{
 
   Arg [1]    : (optional) String - the external name to set
   Example    : $gene->external_name('BRCA2');
-  Description: Getter/setter for attribute external_name.
+  Description: Getter/setter for the external_name attribute,
+               the external database name associated with this gene
   Returntype : String or undef
   Exceptions : none
   Caller     : general
@@ -247,7 +248,8 @@ sub external_name {
 
   Arg [1]    : (optional) String - status to set
   Example    : $gene->status('KNOWN');
-  Description: Getter/setter for attribute status
+  Description: Getter/setter for the status attribute,
+               the gene status i.e. "KNOWN", "NOVEL", etc.
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -266,7 +268,8 @@ sub status {
 
   Arg [1]    : (optional) String - the source to set
   Example    : $gene->source('ensembl');
-  Description: Getter/setter for attribute source
+  Description: Getter/setter for the source attribute,
+               the genes source, e.g. "ensembl"
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -285,8 +288,8 @@ sub source {
 
   Arg [1]    : (optional) String - name of external db to set
   Example    : $gene->external_db('HGNC');
-  Description: Getter/setter for attribute external_db. The db is the one that 
-               belongs to the external_name.  
+  Description: Getter/setter for the external_db attribute,
+               the name of the database the external name is from
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -317,8 +320,8 @@ sub external_db {
 
   Arg [1]    : (optional) String - status of the external db
   Example    : $gene->external_status('KNOWNXREF');
-  Description: Getter/setter for attribute external_status. The status of
-               the external db of the one that belongs to the external_name.
+  Description: Getter/setter for the external_status attribute,
+               the status of the external identifier
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -346,7 +349,8 @@ sub external_status {
 
   Arg [1]    : (optional) String - the description to set
   Example    : $gene->description('This is the gene\'s description');
-  Description: Getter/setter for gene description
+  Description: Getter/setter for the gene description attribute,
+               the description of the gene
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -500,7 +504,8 @@ sub canonical_transcript {
 
   Arg [1]    : (optional) String - canonical_annotation
   Example    : $gene->canonical_annotation('This is the canonical_annotation');
-  Description: Getter/setter for the canonical_annotation
+  Description: Getter/setter for the canonical_annotation attribute,
+               canonical annotation text
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -894,7 +899,8 @@ sub get_all_homologous_Genes {
 
   Arg [1]    : (optional) String - the biotype to set
   Example    : $gene->biotype("protein_coding");
-  Description: Getter/setter for the attribute biotype
+  Description: Getter/setter for the biotype attribute,
+               the biotype e.g. "protein_coding"
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -993,7 +999,8 @@ sub get_all_alt_alleles {
   Arg [1]    : (optional) Int
                A version number for the stable_id
   Example    : $gene->version(2);
-  Description: Getter/setter for version number
+  Description: Getter/setter for version number attribute,
+               the version of the stable identifier of this gene
   Returntype : Int
   Exceptions : none
   Caller     : general
@@ -1012,7 +1019,8 @@ sub version {
 
   Arg [1]    : (optional) String - the stable ID to set
   Example    : $gene->stable_id("ENSG0000000001");
-  Description: Getter/setter for stable id for this gene.
+  Description: Getter/setter for the stable_id attribute,
+               the stable identifier of this gene
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -1031,7 +1039,8 @@ sub stable_id {
 
   Arg [1]    : Boolean $is_current
   Example    : $gene->is_current(1)
-  Description: Getter/setter for is_current state of this gene.
+  Description: Getter/setter for the is_current attribute,
+               specifies if this is the current version of the gene
   Returntype : Int
   Exceptions : none
   Caller     : general
@@ -1050,7 +1059,8 @@ sub is_current {
 
   Arg [1]    : (optional) String - created date to set (as a UNIX time int)
   Example    : $gene->created_date('1141948800');
-  Description: Getter/setter for attribute created_date
+  Description: Getter/setter for the created_date attribute,
+               the date the gene was created
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -1069,7 +1079,8 @@ sub created_date {
 
   Arg [1]    : (optional) String - modified date to set (as a UNIX time int)
   Example    : $gene->modified_date('1141948800');
-  Description: Getter/setter for attribute modified_date
+  Description: Getter/setter for the modified_date attribute
+               the date the gene was last modified
   Returntype : String
   Exceptions : none
   Caller     : general
@@ -1201,7 +1212,9 @@ sub transfer {
 
   Arg [1]    : (optional) Bio::EnsEMBL::DBEntry - the display xref to set
   Example    : $gene->display_xref($db_entry);
-  Description: Getter/setter display_xref for this gene.
+  Description: Getter/setter for the display_xref,
+               the external database entry that is used to label this
+               gene when it is displayed
   Returntype : Bio::EnsEMBL::DBEntry
   Exceptions : none
   Caller     : general
@@ -1295,7 +1308,7 @@ sub recalculate_coordinates {
 
   Example    : $dasref = $prot->get_all_DASFactories
   Description: Retrieves a listref of registered DAS objects
-              TODO: Abstract to a DBLinkContainer obj
+               TODO: Abstract to a DBLinkContainer obj
   Returntype : [ DAS_objects ]
   Exceptions : none
   Caller     : general
